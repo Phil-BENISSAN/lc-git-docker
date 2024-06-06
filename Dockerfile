@@ -3,10 +3,10 @@
 FROM python:3.11.9-slim
 
 # Espace de travail
-WORKDIR ./app
+WORKDIR /app
 
 # ETAPE 2 : COPIE DE TOUS LES FICHIERS DANS L'IMAGE
-COPY . /app
+COPY . .
 
 COPY requirements.txt .
 
