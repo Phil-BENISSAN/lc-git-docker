@@ -41,4 +41,4 @@ HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
 
 
 # Lancement de l'application Streamlit
-ENTRYPOINT ["streamlit", "run", "app/app_streamlit.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "./app/app_streamlit.py", "--server.port=8501", "--server.address=0.0.0.0"]
