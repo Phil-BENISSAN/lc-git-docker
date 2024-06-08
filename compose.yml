@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
- 
+
 # STREAMLIT
   streamlit:
     build:
@@ -13,4 +13,4 @@ services:
       # HTTP
       - target: 8501
         published: 8501
-        protocol: tcp
+        protocol: tcp 
