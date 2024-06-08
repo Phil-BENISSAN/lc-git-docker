@@ -8,7 +8,7 @@ WORKDIR /app
 # ETAPE 2 : COPIE DE TOUS LES FICHIERS DANS L'IMAGE
 COPY . /app
 
-COPY requirements.txt .
+COPY requirements.txt ./app
 
 # ETAPE 3 : INSTALLATION DES DEPENDANCES & MISE A JOUR DES PACKAGES
 RUN pip3 install -r requirements.txt
@@ -33,7 +33,7 @@ RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* \ /var
 
 # ETAPE 4 : Exécution en lancement du conteneur
 
-CMD ["python3", "main.py"]
+CMD ["python3", "streamlit run ./app/app_streamlit.py"]
 
 EXPOSE 8501
 
@@ -41,4 +41,4 @@ HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
 
 
 # Lancement de l'application Streamlit
-ENTRYPOINT ["streamlit", "run", "app_streamlit.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "./app/app_streamlit.py", "--server.port=8501", "--server.address=0.0.0.0"]
