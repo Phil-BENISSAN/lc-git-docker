@@ -6,7 +6,7 @@ FROM python:3.11.9-slim
 WORKDIR /app
 
 # ETAPE 2 : COPIE DE TOUS LES FICHIERS DANS L'IMAGE
-COPY . .
+COPY . /app
 
 COPY requirements.txt .
 

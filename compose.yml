@@ -7,7 +7,7 @@ services:
     build:
       context: .
     volumes:
-      - ./app:/app
+      - .:/app
     tty: true
     ports:
       # HTTP
